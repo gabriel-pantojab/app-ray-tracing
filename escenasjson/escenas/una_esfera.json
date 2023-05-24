@@ -1,0 +1,13 @@
+{
+  "esferas": [
+    {
+      "color": [0.52, 1, 0.62],
+      "reflection": 0.7,
+      "refraction": 1.0,
+      "diffuse_c": 1,
+      "specular_c": 1,
+      "centro": [0, 0.5, 1.5],
+      "radio": 1
+    }
+  ]
+}
