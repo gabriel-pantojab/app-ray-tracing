@@ -1,4 +1,6 @@
 # app-ray-tracing
+
+![](./img_doc/raytracing.png)
 ## Cargar Escena
 
 Para cargar una escena haga click en el boton ***Cargar Escena***, esto abrira un explorar de archivos, donde se encuentrar escenas predefinidas.
@@ -25,7 +27,7 @@ Las escenas estan guardadas en formado **json**.
 Elija una escena y **Abrir**, esto cargara la escena en el programa, para posteriormente ejecutar el algoritmo ***ray tracing***.
 ## Agregar Esferas
 
-Para agregar una esfera, presione el boton ***Agregar Esfera**, esto abrira una ventana donde debe introducir las propiedades de la esfera.
+Para agregar una esfera, presione el boton ***Agregar Esfera***, esto abrira una ventana donde debe introducir las propiedades de la esfera.
 
 ![](img_doc/agregar_esfera.png)
 
@@ -35,5 +37,11 @@ Para agregar una esfera, presione el boton ***Agregar Esfera**, esto abrira una 
 
 Luego de agregar las esferas que quiera, debe generar la escena, esto lo hace con el boton ***Generar Escena***, el cual le pedira que agregue un nombre a la escena para guardarla.
 
+![](./img_doc/generar.png)
+
 ## Ejecutar RayTracing
+
+Luego de Cargar una escena puedo ejecutar el algoritmo ray-tracing con el boton ***Run Ray Tracing***.
+
+![](img_doc/run.png)
 
