@@ -14,6 +14,8 @@ import os
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("green")
 
+# TODO: arreglar el error al agregar esferas, no se actualiza la lista de objetos en la interfaz grafica >:)
+
 class AppWindow(ctk.CTk):
     def __init__(self):
         super().__init__()
@@ -22,6 +24,7 @@ class AppWindow(ctk.CTk):
 
         self.title("Ray Tracing")
         self.geometry("900x400+0+0")
+        self.resizable(False, False)
         self.update_idletasks()
         width = 900
         height = 400
@@ -30,7 +33,8 @@ class AppWindow(ctk.CTk):
         self.geometry(f"{width}x{height}+{x+150}+{y}")
 
         self.escena = [
-            Plano(np.array([0., -.5, 0.]), np.array([0., 1., 0.]), reflection=.5, refraction=1., diffuse_c=.75, specular_c=.5)
+            Plano(np.array([0., -.5, 0.]), np.array([0., 1., 0.]), reflection=.5, refraction=1., diffuse_c=.75, specular_c=.5),
+            Plano(np.array([-1, 1, 3.]), np.array([1., 0., 0.]), reflection=.5, refraction=1., diffuse_c=.75, specular_c=.5),
         ]
         
         self.main_frame = ctk.CTkFrame(self, width=900, height=400)
@@ -98,7 +102,7 @@ class AppWindow(ctk.CTk):
         self.run_button.configure(state=tk.DISABLED)
         self.add_sefera_button.configure(state=tk.NORMAL)
         self.objetos = []
-        while len(self.escena) > 1:
+        while len(self.escena) > 2:
             self.escena.pop()
         self.update_lista_objetos()
         self.generar_escena_button.configure(state=tk.DISABLED)
@@ -124,7 +128,7 @@ class AppWindow(ctk.CTk):
             return
         self.add_sefera_button.configure(state=tk.DISABLED)
         # limpiar escena
-        while len(self.escena) > 1:
+        while len(self.escena) > 2:
             self.escena.pop()
         self.escena_label.configure(text=f"Escena:\n {os.path.basename(dir_escena)}")
         with open(dir_escena) as json_file:
