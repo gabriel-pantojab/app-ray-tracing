@@ -1,10 +1,9 @@
 class Objeto:
-    def __init__(self, color, reflection, refraction, diffuse_c=1., specular_c=1.):
+    def __init__(self, color, reflexion, reflexion_difusa=1., reflexion_especular=1.):
         self.color = color
-        self.reflection = reflection
-        self.refraction = refraction
-        self.diffuse_c = diffuse_c
-        self.specular_c = specular_c
+        self.reflexion = reflexion
+        self.reflexion_difusa = reflexion_difusa
+        self.reflexion_especular = reflexion_especular
 
     def intersectar(self, rayo):
         pass
@@ -14,3 +13,4 @@ class Objeto:
     
     def calcular_color(self, M):
         pass
+

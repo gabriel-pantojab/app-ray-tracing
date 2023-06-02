@@ -4,20 +4,18 @@ from .constants import *
 
 class Plano(Objeto):
     def __init__(self, punto, normal,
-             reflection, refraction, diffuse_c, specular_c, color = None,):
-        if not color:
-            color = (lambda M: (color_plane0 if (int(M[0] * 2) % 2) == (int(M[1] * 2) % 2) else color_plane1))
-        super().__init__(color, reflection, refraction, diffuse_c, specular_c)
+             reflexion, reflexion_difusa, reflexion_especular, color):
+        super().__init__(color, reflexion, reflexion_difusa, reflexion_especular)
         self.punto = punto
         self.normal = normal
     
     def intersectar(self, rayo):
         Origen = rayo.origen
         Direccion = rayo.direccion
-        denom = np.dot(Direccion, self.normal)
-        if np.abs(denom) < 1e-6:
+        denominador = np.dot(Direccion, self.normal)
+        if np.abs(denominador) < 1e-6:
             return np.inf
-        d = np.dot(self.punto - Origen, self.normal) / denom
+        d = np.dot(self.punto - Origen, self.normal) / denominador
         if d < 0:
             return np.inf
         return d
@@ -26,7 +24,8 @@ class Plano(Objeto):
         return self.normal
 
     def calcular_color(self, M):
-        return self.color(M)
+        if not hasattr(self.color, '__len__') : return self.color(M)
+        else : return self.color
 
 
 if __name__ == "__main__":

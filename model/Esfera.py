@@ -3,8 +3,8 @@ from .Objeto import Objeto
 from .utils import normalizar_vector
 
 class Esfera(Objeto):
-    def __init__(self, centro, radio, color, reflection, refraction=0):
-        super().__init__(color, reflection, refraction)
+    def __init__(self, centro, radio, color, reflexion):
+        super().__init__(color, reflexion)
         self.centro = centro
         self.radio = radio
     

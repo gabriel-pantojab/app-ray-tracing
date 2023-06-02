@@ -10,6 +10,7 @@ from controller import Controller
 import jsonutils.utils as jsU
 import json as js
 import os
+import model.constants as cnst
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("green")
@@ -31,10 +32,12 @@ class AppWindow(ctk.CTk):
         x = (self.winfo_screenwidth() - width) // 2
         y = (self.winfo_screenheight() - height) // 2
         self.geometry(f"{width}x{height}+{x+150}+{y}")
-
+        colorPlano = (lambda M: (cnst.color_plane0 if (int(M[0] * 2) % 2) == (int(M[1] * 2) % 2) else cnst.color_plane1))
         self.escena = [
-            Plano(np.array([0., -.5, 0.]), np.array([0., 1., 0.]), reflection=.5, refraction=1., diffuse_c=.75, specular_c=.5),
-            Plano(np.array([-1, 1, 3.]), np.array([1., 0., 0.]), reflection=.5, refraction=1., diffuse_c=.75, specular_c=.5),
+            Plano(np.array([0, -.2, 0]), np.array([0., 1, 0.]), reflexion=.5, reflexion_difusa=.75, reflexion_especular=.5,
+                  color=colorPlano),
+            Plano(np.array([-2.7, 1, 3.]), np.array([1., 0., 0.]), reflexion=.5, reflexion_difusa=.75, reflexion_especular=.5,
+                  color=colorPlano),
         ]
         
         self.main_frame = ctk.CTkFrame(self, width=900, height=400)
@@ -70,7 +73,7 @@ class AppWindow(ctk.CTk):
 
         self.run_button = ctk.CTkButton(self.options_frame, text="Run Ray Tracing")
         self.run_button.grid(row=1, column=0, sticky=tk.NSEW, pady=5, padx=5)
-        self.run_button.configure(state=tk.DISABLED)
+        #self.run_button.configure(state=tk.DISABLED)
 
         self.clear_button = ctk.CTkButton(self.options_frame, text="Clear")
         self.clear_button.grid(row=2, column=0, sticky=tk.NSEW, pady=5, padx=5)
@@ -137,9 +140,8 @@ class AppWindow(ctk.CTk):
                 centro = np.array([esfera["centro"][0], esfera["centro"][1], esfera["centro"][2]])
                 radio = esfera["radio"]
                 color = np.array([esfera["color"][0], esfera["color"][1], esfera["color"][2]])
-                reflection = esfera["reflection"]
-                refraction = esfera["refraction"]
-                self.escena.append(Esfera(centro, radio, color, reflection, refraction))
+                reflexion = esfera["reflexion"]
+                self.escena.append(Esfera(centro, radio, color, reflexion))
         self.run_button.configure(state=tk.NORMAL)
         self.update_lista_objetos()
         self.generar_escena_button.configure(state=tk.DISABLED)

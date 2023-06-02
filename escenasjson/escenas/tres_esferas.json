@@ -2,28 +2,25 @@
   "esferas": [
     {
       "color": [1.0, 1.0, 0.0],
-      "reflection": 0.7,
-      "refraction": 1.0,
-      "diffuse_c": 1.0,
-      "specular_c": 1.0,
+      "reflexion": 0.7,
+      "reflexion_difusa": 1.0,
+      "reflexion_especular": 1.0,
       "centro": [0.55, 0.1, 0.1],
       "radio": 0.3
     },
     {
       "color": [1.0, 0.0, 0.2],
-      "reflection": 0.7,
-      "refraction": 1.0,
-      "diffuse_c": 1.0,
-      "specular_c": 1.0,
+      "reflexion": 0.7,
+      "reflexion_difusa": 1.0,
+      "reflexion_especular": 1.0,
       "centro": [-1.5, 0.4, 3],
       "radio": 1
     },
     {
       "color": [0.33, 0.0, 0.2],
-      "reflection": 0.5,
-      "refraction": 1.0,
-      "diffuse_c": 1.0,
-      "specular_c": 1.0,
+      "reflexion": 0.5,
+      "reflexion_difusa": 1.0,
+      "reflexion_especular": 1.0,
       "centro": [-0.7, -0.2, 0.6],
       "radio": 0.2
     }

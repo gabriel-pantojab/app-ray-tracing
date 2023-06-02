@@ -1,8 +1,9 @@
 import numpy as np
 
 def normalizar_vector(x):
-    x /= np.linalg.norm(x)
-    return x
+    x = np.array(x)
+    nx = x / np.linalg.norm(x)
+    return nx
 
 def normalizar_color(color):
     r = color[0] * 1 / 255
@@ -11,4 +12,4 @@ def normalizar_color(color):
     return [r, g, b]
 
 if __name__ == '__main__':
-    print(__package__)
+    print(np.linalg.norm([0, 0, 0]))
