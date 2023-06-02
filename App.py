@@ -73,7 +73,7 @@ class AppWindow(ctk.CTk):
 
         self.run_button = ctk.CTkButton(self.options_frame, text="Run Ray Tracing")
         self.run_button.grid(row=1, column=0, sticky=tk.NSEW, pady=5, padx=5)
-        #self.run_button.configure(state=tk.DISABLED)
+        self.run_button.configure(state=tk.DISABLED)
 
         self.clear_button = ctk.CTkButton(self.options_frame, text="Clear")
         self.clear_button.grid(row=2, column=0, sticky=tk.NSEW, pady=5, padx=5)
@@ -122,6 +122,7 @@ class AppWindow(ctk.CTk):
             self.generar_escena_button.configure(state=tk.DISABLED)
 
     def cargar_escena(self):
+        self.loading_label.configure(text="CARGANDO ESCENA...")
         file_dialog = tk.filedialog.askopenfilename(initialdir="./escenasjson/escenas/",
                                                     title="Select file", 
                                                     filetypes=(("json files", "*.json"), ("all files", "*.*")))
@@ -146,6 +147,8 @@ class AppWindow(ctk.CTk):
         self.update_lista_objetos()
         self.generar_escena_button.configure(state=tk.DISABLED)
         print(f"Escena cargada {len(self.escena)}")
+        self.loading_label.configure(text="ESCENA CARGADA :)")
+
 
     def update_lista_objetos(self):
         self.obj_list.delete(0, tk.END)

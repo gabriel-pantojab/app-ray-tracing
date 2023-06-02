@@ -13,7 +13,7 @@
       "reflexion": 0.7,
       "reflexion_difusa": 1.0,
       "reflexion_especular": 1.0,
-      "centro": [-1.5, 0.4, 3],
+      "centro": [-0.5, 0.8, 3],
       "radio": 1
     },
     {
@@ -21,7 +21,7 @@
       "reflexion": 0.5,
       "reflexion_difusa": 1.0,
       "reflexion_especular": 1.0,
-      "centro": [-0.7, -0.2, 0.6],
+      "centro": [-0.5, 0.2, 0.3],
       "radio": 0.2
     }
   ]

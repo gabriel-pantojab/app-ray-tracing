@@ -41,6 +41,7 @@ class Controller:
 
     def run_algorithm(self):
         self.disable_buttons()
+        self.app.loading_label.configure(image="")
         self.hilo = th.Thread(target=self.run_ray_tracing)
         self.hilo.start()
 

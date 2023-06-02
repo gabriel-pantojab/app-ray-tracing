@@ -1,12 +1,12 @@
 {
   "esferas": [
     {
-      "color": [0.52, 1, 0.62],
+      "color": [1, 0, 0],
       "reflexion": 0.7,
       "reflexion_difusa": 1,
       "reflexion_especular": 1,
       "centro": [1, 0.5, 1.5],
-      "radio": 0.5
+      "radio": 0.7
     }
   ]
 }

@@ -1,12 +1,27 @@
 {
   "esferas": [
-    
+    {
+      "color": [1.0, 1.0, 0.0],
+      "reflexion": 0.7,
+      "reflexion_difusa": 1.0,
+      "specular_c": 1.0,
+      "centro": [0.25, 0.1, 0.01],
+      "radio": 0.1
+    },
+    {
+      "color": [0.5, 0.223, 0.5],
+      "reflexion": 0.7,
+      "reflexion_difusa": 1.0,
+      "reflexion_especular": 1.0,
+      "centro": [0.06, 0.1, 0.16],
+      "radio": 0.1
+    },
     {
       "color": [1.0, 0.572, 0.184],
       "reflexion": 0.7,
       "reflexion_difusa": 1.0,
       "reflexion_especular": 1.0,
-      "centro": [-0.51, 0.1, 0.61],
+      "centro": [-0.13, 0.1, 0.31],
       "radio": 0.1
     },
 
@@ -32,22 +47,6 @@
       "reflexion_difusa": 1.0,
       "reflexion_especular": 1.0,
       "centro": [-0.13, 0.29, 0.31],
-      "radio": 0.1
-    },
-    {
-      "color": [0.5, 0.223, 0.5],
-      "reflexion": 0.0,
-      "reflexion_difusa": 1.0,
-      "reflexion_especular": 1.0,
-      "centro": [-0.32, 0.29, 0.46],
-      "radio": 0.1
-    },
-    {
-      "color": [1.0, 0.572, 0.184],
-      "reflexion": 0.0,
-      "reflexion_difusa": 1.0,
-      "reflexion_especular": 1.0,
-      "centro": [-0.51, 0.29, 0.61],
       "radio": 0.1
     },
 
@@ -76,22 +75,7 @@
       "centro": [-0.13, 0.48, 0.31],
       "radio": 0.1
     },
-    {
-      "color": [0.5, 0.223, 0.5],
-      "reflexion": 0.0,
-      "reflexion_difusa": 1.0,
-      "reflexion_especular": 1.0,
-      "centro": [-0.32, 0.48, 0.46],
-      "radio": 0.1
-    },
-    {
-      "color": [1.0, 0.572, 0.184],
-      "reflexion": 0.0,
-      "reflexion_difusa": 1.0,
-      "reflexion_especular": 1.0,
-      "centro": [-0.51, 0.48, 0.61],
-      "radio": 0.1
-    },
+    
 
     {
       "color": [1.0, 1.0, 0.0],
@@ -116,22 +100,6 @@
       "reflexion_especular": 1.0,
       "centro": [-0.13, 0.67, 0.31],
       "radio": 0.1
-    },
-    {
-      "color": [0.5, 0.223, 0.5],
-      "reflexion": 0.5,
-      "reflexion_difusa": 1.0,
-      "reflexion_especular": 1.0,
-      "centro": [-0.32, 0.67, 0.46],
-      "radio": 0.1
-    },
-    {
-      "color": [1.0, 0.572, 0.184],
-      "reflexion": 0.5,
-      "reflexion_difusa": 1.0,
-      "reflexion_especular": 1.0,
-      "centro": [-0.51, 0.67, 0.61],
-      "radio": 0.1
-    }    
+    }   
   ]
 }
